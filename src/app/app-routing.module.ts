@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ConfigComponent } from './pages/config/config.component';
+import { MyTasksComponent } from './pages/my-tasks/my-tasks.component';
 
 
 const routes: Routes = [
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'config',
-    component: ConfigComponent
+    path: 'my-tasks',
+    component: MyTasksComponent
   },
   {
     path: '',
