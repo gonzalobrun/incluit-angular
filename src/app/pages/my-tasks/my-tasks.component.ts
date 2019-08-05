@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from 'src/app/shared/interfaces/task';
 
 @Component({
   selector: 'app-my-tasks',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyTasksComponent implements OnInit {
 
+  public myTasks: Array<Task>;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

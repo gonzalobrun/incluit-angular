@@ -1,0 +1,27 @@
+:host {
+    
+    display: block;
+
+    .task {
+        font-size: 12px;
+        color: #777;
+        padding: 12px;
+        border-bottom: solid 1px #bbb;
+
+        .name {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .description {
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            border-bottom: solid 1px #eee;
+        }
+
+        .dates {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

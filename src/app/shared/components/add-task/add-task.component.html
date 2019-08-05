@@ -1,0 +1,13 @@
+<button class="btn btn-success btn-add" (click)="openAddModal(taskCreation)">Add</button>
+
+<ng-template #taskCreation>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">New Task</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+</ng-template>
