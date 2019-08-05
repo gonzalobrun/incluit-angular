@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { HeaderComponent } from './components/header/header.component';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
@@ -18,7 +19,8 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot(),
   ],
   exports: [
     HeaderComponent,
