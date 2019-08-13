@@ -1,6 +1,7 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Task } from '../../interfaces/task';
 
 @Component({
   selector: 'app-add-task',
@@ -11,6 +12,7 @@ export class AddTaskComponent implements OnInit {
 
   public modalRef: BsModalRef;
   public newTaskForm: FormGroup;
+  @Output() newTask = new EventEmitter<Task>();
 
   constructor(private modalService: BsModalService) {}
 
@@ -20,15 +22,17 @@ export class AddTaskComponent implements OnInit {
 
   buildForm(): void {
     this.newTaskForm = new FormGroup({
-      title: new FormControl(''),
-      description: new FormControl(''),
+      title: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      description: new FormControl('', [Validators.required]),
       date: new FormControl(new Date()),
-      deadline: new FormControl('')
+      deadline: new FormControl('', [Validators.required])
     })
   }
 
   confirmTask(): void {
-    console.log(this.newTaskForm.value);
+    this.newTask.emit(this.newTaskForm.value);
+    this.modalRef.hide();
+    this.newTaskForm.reset();
   }
 
   public openAddModal(template: TemplateRef<any>): void {

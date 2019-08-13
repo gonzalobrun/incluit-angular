@@ -14,4 +14,8 @@ export class MyTasksComponent implements OnInit {
 
   ngOnInit() {}
 
+  onNewTask(event): void {
+    console.log('From my-task page!', event);
+  }
+
 }

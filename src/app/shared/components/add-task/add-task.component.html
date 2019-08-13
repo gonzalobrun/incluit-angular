@@ -1,15 +1,14 @@
 <button class="btn btn-success btn-add" (click)="openAddModal(taskCreation)">Add</button>
 
 <ng-template #taskCreation>
-
     <div class="modal-header">
         <h4 class="modal-title pull-left">New Task</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+    </div>
 
-      <div class="modal-body">
+    <div class="modal-body">
         <form [formGroup]="newTaskForm">
             <label for="title">Titulo:</label>
             <input id="title" type="text" formControlName="title" class="form-control">
@@ -18,10 +17,11 @@
             <input id="description" type="text" formControlName="description" class="form-control">
 
             <label for="deadline">Realizar antes de:</label>
-            <input id="deadline" type="text" formControlName="deadline" class="form-control" bsDatepicker [bsConfig]="{ adaptivePosition: true }">
+            <input id="deadline" type="text" formControlName="deadline" class="form-control" bsDatepicker
+                [bsConfig]="{ adaptivePosition: true }">
         </form>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" (click)="confirmTask()">Confirm</button>
-      </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" (click)="confirmTask()" [disabled]="!newTaskForm.valid">Confirm</button>
+    </div>
 </ng-template>
