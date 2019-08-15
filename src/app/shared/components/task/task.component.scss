@@ -1,0 +1,32 @@
+:host {
+    width: 100%;
+    display: block;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+
+    .task-title {
+        font-size: 22px;
+    }
+    .task-description {
+        font-size: 16px;
+        color: rgb(49, 49, 49);
+    }
+    .task-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: solid 1px #ccc;
+
+        .task-date {
+            color: #aaa;
+
+            &.danger {
+                color:red;
+            }
+        }
+    }
+}

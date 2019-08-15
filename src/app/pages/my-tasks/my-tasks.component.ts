@@ -8,14 +8,15 @@ import { Task } from 'src/app/shared/interfaces/task';
 })
 export class MyTasksComponent implements OnInit {
 
-  public myTasks: Array<Task>;
+  public myTasks: Array<Task> = [];
 
   constructor() { }
 
   ngOnInit() {}
 
-  onNewTask(event): void {
-    console.log('From my-task page!', event);
+  onNewTask(task: Task): void {
+    // console.log('From my-task page!', task);
+    this.myTasks.push(task)
   }
 
 }

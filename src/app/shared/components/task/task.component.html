@@ -1,1 +1,6 @@
-<p>task works!</p>
+<p class="task-title">{{ task.title }}</p>
+<span class="task-description">{{ task.description }}</span>
+<div class="task-footer">
+    <span class="task-date">{{ task.date | date:'shortDate' }}</span>
+    <span class="task-date">{{ task.deadline | date:'shortDate' }}</span>
+</div>

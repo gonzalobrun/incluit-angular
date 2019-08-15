@@ -24,12 +24,13 @@ export class AddTaskComponent implements OnInit {
     this.newTaskForm = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.minLength(3)]),
       description: new FormControl('', [Validators.required]),
-      date: new FormControl(new Date()),
+      date: new FormControl(null),
       deadline: new FormControl('', [Validators.required])
     })
   }
 
   confirmTask(): void {
+    this.newTaskForm.get('date').setValue(new Date());
     this.newTask.emit(this.newTaskForm.value);
     this.modalRef.hide();
     this.newTaskForm.reset();
