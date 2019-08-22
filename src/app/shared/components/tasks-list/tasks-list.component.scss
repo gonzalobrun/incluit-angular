@@ -1,27 +1,17 @@
 :host {
-    
-    display: block;
+    display: flex;
+    background-color: rgb(230, 230, 230);
+    min-height: 120px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
 
-    .task {
-        font-size: 12px;
-        color: #777;
+    .counter{
+        color: red;
         padding: 12px;
-        border-bottom: solid 1px #bbb;
-
-        .name {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .description {
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            border-bottom: solid 1px #eee;
-        }
-
-        .dates {
-            display: flex;
-            justify-content: space-between;
-        }
+        font-size: 22px;
+        font-weight: 500;
     }
 }
