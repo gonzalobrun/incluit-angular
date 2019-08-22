@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 import { TaskComponent } from './components/task/task.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,9 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     ReactiveFormsModule,
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
+  ],
+  providers: [
+    LocalStorageService
   ],
   exports: [
     HeaderComponent,
