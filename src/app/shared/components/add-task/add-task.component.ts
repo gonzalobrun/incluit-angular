@@ -30,14 +30,14 @@ export class AddTaskComponent implements OnInit {
   }
 
   confirmTask(): void {
-    this.newTaskForm.get('date').setValue(new Date());
     this.newTask.emit(this.newTaskForm.value);
     this.modalRef.hide();
     this.newTaskForm.reset();
   }
-
+  
   public openAddModal(template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template);
+    this.newTaskForm.get('date').setValue(new Date());
   }
 
 }

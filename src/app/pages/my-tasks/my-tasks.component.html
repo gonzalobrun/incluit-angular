@@ -1,2 +1,2 @@
 <app-add-task (newTask)="onNewTask($event)"></app-add-task>
-<app-task *ngFor="let task of myTasks" [task]="task"></app-task>
+<app-tasks-list [taskList]="myTasks"></app-tasks-list>
