@@ -4,3 +4,4 @@
     <span class="task-date">{{ task.date | date:'shortDate' }}</span>
     <span class="task-date">{{ task.deadline | date:'shortDate' }}</span>
 </div>
+<button class="btn btn-danger btn-delete" (click)="deleteTask()">Delete</button>

@@ -6,6 +6,7 @@
     padding: 10px;
     margin-bottom: 10px;
     background-color: white;
+    position: relative;
 
     .task-title {
         font-size: 22px;
@@ -28,5 +29,11 @@
                 color:red;
             }
         }
+    }
+
+    .btn-delete {
+        position: absolute;
+        top: 8px;
+        right: 8px;
     }
 }
