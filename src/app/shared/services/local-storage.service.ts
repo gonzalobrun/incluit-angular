@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
 
   public store(key: any, obj: any): void {
-    sessionStorage.setItem(key, JSON.stringify(obj));
+    localStorage.setItem(key, JSON.stringify(obj));
   }
 
   public retrieve(key: any) {
-    let itemString = sessionStorage.getItem(key);
+    let itemString = localStorage.getItem(key);
     return JSON.parse(itemString);
   }
 
@@ -25,6 +25,6 @@ export class LocalStorageService {
   }
 
   public delete(key: any): void {
-    this.delete(key);
+    localStorage.removeItem(key);
   }
 }
