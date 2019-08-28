@@ -18,6 +18,6 @@ export class TasksListComponent implements OnInit {
 
   deleteTask(index: number): void {
     this.taskList.splice(index, 1);
-    this.localStorageService.update('tasks',this.taskList);
+    this.localStorageService.updateAll('tasks',this.taskList);
   }
 }
