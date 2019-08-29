@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LocalStorageService {
 
-  public store(key: any, obj: any): void {
+  private store(key: any, obj: any): void {
     localStorage.setItem(key, JSON.stringify(obj));
   }
 
@@ -22,6 +22,11 @@ export class LocalStorageService {
   public update(key: any, obj: any): void {
     let item = this.retrieve(key);
     this.store(key, Object.assign(item, obj));
+  }
+
+  public updateAll(key: any, obj: any): void {
+    let item = this.retrieve(key);
+    this.store(key, obj);
   }
 
   public delete(key: any): void {
