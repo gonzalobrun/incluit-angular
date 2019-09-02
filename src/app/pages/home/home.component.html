@@ -1,3 +1,14 @@
+<section class="weather">
+    <form >
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Ingrese Ciudad" #searchParam>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="searchWeather(searchParam.value)">Buscar</button>
+        </div>
+    </div>
+    </form>
+</section>
+
 <footer class="footer">
     <button class="btn btn-primary btn-block" [routerLink]="['/my-tasks']">Ver todas mis tareas</button>
 </footer>
