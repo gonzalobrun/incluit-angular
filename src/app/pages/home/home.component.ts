@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
     this.weatherService.getWeather(params).subscribe(
       res => {
         this.currentWeather = res;
-        console.log(this.currentWeather);
       },
       err => console.error(err)
     )
