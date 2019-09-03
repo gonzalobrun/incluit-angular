@@ -11,13 +11,15 @@ import { TaskComponent } from './components/task/task.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { LocalStorageService } from './services/local-storage.service';
 import { WeatherServiceService } from './services/weather-service.service';
+import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     TasksListComponent,
     TaskComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    WeatherCardComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { WeatherServiceService } from './services/weather-service.service';
     HeaderComponent,
     TasksListComponent,
     TaskComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    WeatherCardComponent
   ]
 })
 export class SharedModule { }

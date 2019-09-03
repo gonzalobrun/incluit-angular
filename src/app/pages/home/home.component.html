@@ -9,7 +9,7 @@
     </form>
 </section>
 
-<pre *ngIf="currentWeather">{{ currentWeather | json }}</pre>
+<app-weather-card [currentWeather]="currentWeather" [isLoading]="isLoading"></app-weather-card>
 
 <footer class="footer">
     <button class="btn btn-primary btn-block" [routerLink]="['/my-tasks']">Ver todas mis tareas</button>

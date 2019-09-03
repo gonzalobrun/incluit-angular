@@ -1,0 +1,47 @@
+:host {
+    display: flex;
+    background-color: rgb(230, 230, 230);
+    min-height: 120px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 18px;
+
+    .counter{
+        color: red;
+        padding: 12px;
+        font-size: 22px;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
+    }
+
+    .weather-card{
+        padding: 8px;
+        background-color: whitesmoke;
+        min-width: 260px;
+        padding: 15px;
+        margin: 8px 16px;
+
+        .weather-card-header{
+            .name{
+                font-weight: 600;
+                font-size: 18px;
+            }
+            .coord{
+                font-size: 11px;
+                color: rgb(143, 143, 143);
+                margin-left: 8px;
+            }
+
+        }
+        .weather-card-body{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            font-size: 14px;
+        }
+    }
+    
+}
