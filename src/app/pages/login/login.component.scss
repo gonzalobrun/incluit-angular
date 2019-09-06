@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    
+    .btn-login{
+        margin-top: 15px;
+    }
+}

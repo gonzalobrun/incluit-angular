@@ -1,6 +1,7 @@
 <span class="counter" *ngIf="currentWeather?.count && !isLoading">{{ currentWeather?.count }} Result(s)!</span>
 <span class="counter" *ngIf="!currentWeather?.count && !isLoading">No results. Try Again!</span>
 <span class="counter" *ngIf="isLoading">Loading...</span>
+
     <div class="weather-card" *ngFor="let city of currentWeather?.list">
         <div class="weather-card-header">
             <span class="name">{{ city.name }}, {{city.sys.country}}</span>
@@ -11,5 +12,4 @@
             <span>Humedad: {{ city.main.humidity }}</span>
             <span>Velocidad del viento: {{ city.wind.speed }}</span>
         </div>
-    
     </div>

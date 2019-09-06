@@ -13,6 +13,7 @@ export class WeatherCardComponent implements OnInit {
   constructor() { }
 
   ngOnChanges(){
+    console.log(this.currentWeather);
   }
 
   ngOnInit() {
