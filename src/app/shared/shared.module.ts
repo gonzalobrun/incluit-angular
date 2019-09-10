@@ -12,6 +12,8 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
 import { LocalStorageService } from './services/local-storage.service';
 import { WeatherServiceService } from './services/weather-service.service';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import { CentigradePipe } from './pipes/centigrade.pipe';
+import { WindPipe } from './pipes/wind.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { WeatherCardComponent } from './components/weather-card/weather-card.com
     TasksListComponent,
     TaskComponent,
     AddTaskComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    CentigradePipe,
+    WindPipe
   ],
   imports: [
     CommonModule,
@@ -37,7 +41,9 @@ import { WeatherCardComponent } from './components/weather-card/weather-card.com
     TasksListComponent,
     TaskComponent,
     AddTaskComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    CentigradePipe,
+    WindPipe
   ]
 })
 export class SharedModule { }
