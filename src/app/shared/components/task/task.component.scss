@@ -11,10 +11,33 @@
 
     .task-title {
         font-size: 22px;
+        width: 100%;
+        margin-bottom: 5px;
+        border: none;
+
+        &:not(:disabled) {
+            border-bottom: solid gray 1px;
+        }
+
+        &:disabled {
+            background-color: white;
+        }
+
     }
     .task-description {
         font-size: 16px;
         color: rgb(49, 49, 49);
+        width: 100%;
+        border: none;
+        
+        &:not(:disabled) {
+            border-bottom: solid gray 1px;
+        }
+
+        &:disabled {
+            background-color: white;
+        }
+
     }
     .task-footer {
         display: flex;
@@ -29,6 +52,20 @@
             &.danger {
                 color:red;
             }
+
+            &.datepicker{
+                max-width: 120px;
+                text-align: right;
+                border: none;
+                
+                &:not(:disabled) {
+                    border-bottom: solid gray 1px;
+                }
+ 
+                &:disabled {
+                    background-color: white;
+                }
+            }
         }
     }
 
@@ -36,6 +73,6 @@
         min-width: 75px;
         max-height: 30px;
         font-size: 14px;
-        line-height: 12px;
+        line-height: 8px;
     }
 }

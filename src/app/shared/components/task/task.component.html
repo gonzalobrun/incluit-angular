@@ -1,21 +1,24 @@
-<p class="task-title">{{ task.title }}</p>
-<span class="task-description">{{ task.description }}</span>
+<form [formGroup]="editTaskForm">
+    <input class="task-title" type="text" formControlName="title">
+    <input class="task-description" type="text" formControlName="description">
+    <div class="task-footer">
+        <span class="task-date">{{ task.date | date:'shortDate' }}</span>
+        <input class="task-date datepicker" type="text" formControlName="deadline" bsDatepicker
+                [bsConfig]="{ adaptivePosition: true }">
+
+    </div>
+</form>
+
 <div class="task-footer">
-    <span class="task-date">{{ task.date | date:'shortDate' }}</span>
-    <span class="task-date">{{ task.deadline | date:'shortDate' }}</span>
-</div>
-<div class="task-footer">
-    <button class="btn btn-warning btn-task" (click)="edit(task)">
+    <button class="btn btn-warning btn-task" (click)="editTask(task)">
         <span *ngIf="!isEditing">Edit</span>
         <span *ngIf="isEditing">Cancel</span>
     </button>
     <button class="btn btn-danger btn-task" (click)="deleteTask()" *ngIf="isEditing">Delete</button>
-    <button class="btn btn-task" 
-        *ngIf="!isEditing"
-        (click)="task.isDone = !task.isDone"
+    <button class="btn btn-task" *ngIf="!isEditing" (click)="task.isDone = !task.isDone"
         [ngClass]="{'btn-success': task.isDone, 'btn-outline-success': !task.isDone}">
         <span *ngIf="!task.isDone">Done</span>
         <span *ngIf="task.isDone">Undo</span>
     </button>
-    <button class="btn btn-success btn-task" *ngIf="isEditing" (click)="save()">Save</button>
+    <button class="btn btn-success btn-task" *ngIf="isEditing" (click)="saveTask()">Save</button>
 </div>
