@@ -4,4 +4,18 @@
     <span class="task-date">{{ task.date | date:'shortDate' }}</span>
     <span class="task-date">{{ task.deadline | date:'shortDate' }}</span>
 </div>
-<button class="btn btn-danger btn-delete" (click)="deleteTask()">Delete</button>
+<div class="task-footer">
+    <button class="btn btn-warning btn-task" (click)="edit(task)">
+        <span *ngIf="!isEditing">Edit</span>
+        <span *ngIf="isEditing">Cancel</span>
+    </button>
+    <button class="btn btn-danger btn-task" (click)="deleteTask()" *ngIf="isEditing">Delete</button>
+    <button class="btn btn-task" 
+        *ngIf="!isEditing"
+        (click)="task.isDone = !task.isDone"
+        [ngClass]="{'btn-success': task.isDone, 'btn-outline-success': !task.isDone}">
+        <span *ngIf="!task.isDone">Done</span>
+        <span *ngIf="task.isDone">Undo</span>
+    </button>
+    <button class="btn btn-success btn-task" *ngIf="isEditing" (click)="save()">Save</button>
+</div>

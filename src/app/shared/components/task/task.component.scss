@@ -8,6 +8,7 @@
     background-color: white;
     position: relative;
 
+
     .task-title {
         font-size: 22px;
     }
@@ -31,9 +32,10 @@
         }
     }
 
-    .btn-delete {
-        position: absolute;
-        top: 8px;
-        right: 8px;
+    .btn-task {
+        min-width: 75px;
+        max-height: 30px;
+        font-size: 14px;
+        line-height: 12px;
     }
 }

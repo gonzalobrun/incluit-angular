@@ -10,6 +10,9 @@ export class TaskComponent implements OnInit {
 
   @Input() task: Task;
   @Output() delete = new EventEmitter();
+
+  public isEditing = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -17,6 +20,15 @@ export class TaskComponent implements OnInit {
 
   deleteTask(): void {
     this.delete.emit();
+  }
+
+  edit(task: Task): void {
+    this.isEditing = !this.isEditing;
+    
+  };
+
+  save(task: Task): void {
+    this.isEditing = !this.isEditing;
   }
 
 }
