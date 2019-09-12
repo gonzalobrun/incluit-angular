@@ -5,7 +5,6 @@
         <span class="task-date">{{ task.date | date:'shortDate' }}</span>
         <input class="task-date datepicker" type="text" formControlName="deadline" bsDatepicker
                 [bsConfig]="{ adaptivePosition: true }">
-
     </div>
 </form>
 
@@ -15,10 +14,10 @@
         <span *ngIf="isEditing">Cancel</span>
     </button>
     <button class="btn btn-danger btn-task" (click)="deleteTask()" *ngIf="isEditing">Delete</button>
-    <button class="btn btn-task" *ngIf="!isEditing" (click)="task.isDone = !task.isDone"
+    <button class="btn btn-task" *ngIf="!isEditing" (click)="markAsDone(task)"
         [ngClass]="{'btn-success': task.isDone, 'btn-outline-success': !task.isDone}">
         <span *ngIf="!task.isDone">Done</span>
         <span *ngIf="task.isDone">Undo</span>
     </button>
-    <button class="btn btn-success btn-task" *ngIf="isEditing" (click)="saveTask()">Save</button>
+    <button class="btn btn-success btn-task" *ngIf="isEditing" (click)="saveTask(task)">Save</button>
 </div>

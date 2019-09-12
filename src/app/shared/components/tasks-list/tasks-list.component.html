@@ -1,3 +1,3 @@
 <span class="counter" *ngIf="taskList.length">{{taskList.length}} task(s) to do!</span>
-<app-task *ngFor="let task of taskList; index as i" [task]="task" (delete)="deleteTask(i)" (save)="saveTask($event, i)"></app-task>
+<app-task *ngFor="let task of taskList; index as i" [task]="task" (delete)="deleteTask(i)" (update)="updateList()"></app-task>
 <div *ngIf="!taskList.length">Your list is empty :(</div>

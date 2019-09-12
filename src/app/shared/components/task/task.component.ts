@@ -11,12 +11,10 @@ export class TaskComponent implements OnInit {
 
   @Input() task: Task;
   @Output() delete = new EventEmitter();
-  @Output() save = new EventEmitter();
-  
+  @Output() update = new EventEmitter();
 
   public isEditing = false;
   public editTaskForm: FormGroup;
-
   public previoudData: any;
 
   constructor() { }
@@ -40,7 +38,7 @@ export class TaskComponent implements OnInit {
 
   editTask(task: Task): void {
     this.isEditing = !this.isEditing;
-    if(this.isEditing) {
+    if (this.isEditing) {
       this.editTaskForm.enable();
       this.previoudData = this.editTaskForm.value;
     }
@@ -48,13 +46,19 @@ export class TaskComponent implements OnInit {
       this.editTaskForm.setValue(this.previoudData);
       this.editTaskForm.disable();
     }
-    
+
   }
 
   saveTask(task: Task): void {
     this.isEditing = !this.isEditing;
-    
-    this.save.emit(this.editTaskForm.value);
+    Object.assign(task, this.editTaskForm.value)
+    this.editTaskForm.disable();
+    this.update.emit();
+  }
+
+  markAsDone(task: Task): void {
+    task.isDone = !task.isDone;
+    this.update.emit();
   }
 
 }
