@@ -15,7 +15,7 @@ export class TaskComponent implements OnInit {
 
   public isEditing = false;
   public editTaskForm: FormGroup;
-  public previoudData: any;
+  private previoudData: any;
 
   constructor() { }
 
@@ -46,7 +46,6 @@ export class TaskComponent implements OnInit {
       this.editTaskForm.setValue(this.previoudData);
       this.editTaskForm.disable();
     }
-
   }
 
   saveTask(task: Task): void {
